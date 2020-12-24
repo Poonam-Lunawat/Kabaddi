@@ -70,8 +70,8 @@ function draw(){
     text("press space for toss", 150,200);
     
    
-  
-  if(keyDown("space"))
+  }
+  if(keyDown("space") && gameState===0)
   {
     
     
@@ -96,34 +96,34 @@ function draw(){
     }
    
     }  
-  }
+  
     if(gameState===1)
     { 
       database.ref('player1/position').on("value",readposition1)
       database.ref('player2/position').on("value",readposition2)
-      if(keyDown("up"))
+      if(keyWentDown("up"))
       {
         console.log("up")  
         writeposition1(0,-5)
 
       }
-      if(keyDown("down"))
+      if(keyWentDown("down"))
       {
          writeposition1(0,5)
       }
-      if(keyDown("left"))
+      if(keyWentDown("left"))
       {
         writeposition1(-5,0)
       }
-      if(keyDown("right"))
+      if(keyWentDown("right"))
       {
         writeposition1(5,0)
       }
-      if(keyDown("w"))
+      if(keyWentDown("w"))
       {
         writeposition2(0,-5)
       }
-      if(keyDown("s"))
+      if(keyWentDown("s"))
       {
         writeposition2(0,5)
       }
@@ -164,28 +164,28 @@ function draw(){
     {
       database.ref('player1/position').on("value",readposition1)
       database.ref('player2/position').on("value",readposition2)
-        if(keyDown("w"))
+        if(keyWentDown("w"))
         {
           console.log("up")    
           writeposition2(0,-5)
         }
-        if(keyDown("s"))
+        if(keyWentDown("s"))
         {
             writeposition2(0,5)
         }
-        if(keyDown("a"))
+        if(keyWentDown("a"))
         {
           writeposition2(-5,0)
         }
-        if(keyDown("d"))
+        if(keyWentDown("d"))
         {
           writeposition2(5,0)
         }
-        if(keyDown("up"))
+        if(keyWentDown("up"))
         {
           writeposition1(0,-5)
         }
-        if(keyDown("down"))
+        if(keyWentDown("down"))
         {
           writeposition1(0,5)
         }
